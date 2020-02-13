@@ -33,7 +33,15 @@
 <script lang="ts">
 import Vue ,{ PropType } from 'vue';
 
+export type Rect = {
+  width: number
+  height: number
+}
+
 export default Vue.extend({
+  data: () => ({
+    bouds: null as ClientRect | DOMRect |null
+  })
   name: 'HelloWorld',
   props: {
     obj: {
