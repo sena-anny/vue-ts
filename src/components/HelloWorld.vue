@@ -41,7 +41,7 @@ export type Rect = {
 export default Vue.extend({
   data: () => ({
     bouds: null as ClientRect | DOMRect |null
-  })
+  }),
   name: 'HelloWorld',
   props: {
     obj: {
