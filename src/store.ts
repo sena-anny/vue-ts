@@ -31,6 +31,18 @@ export default new Vuex.Store({
     asyncSetName(ctx, payload) {
       ctx.commit('setName', {name: payload})
       console.log(ctx.state.name)
+    },
+    asyncIncrement(ctx) {
+      ctx.commit('increment')
+      console.log(ctx.state.count)
+    },
+    async countup(ctx) {
+      while(true){
+        await (() => new Promise(resolve => {
+          setTimeout(resolve, 1000)
+        }))()
+        ctx.dispatch('increment')
+      }
     }
 
   }
